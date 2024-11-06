@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Loading Page | SPYshow</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200..1000&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #020b1a; /* خلفية الصفحة */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+            flex-direction: column; /* ترتيب العناصر عمودياً */
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .loader {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border: 10px solid rgba(161, 106, 22, 0.5);
+            border-radius: 50%;
+            border-top-color: #a16a16;
+            animation: spin 1s linear infinite;
+            display: none; /* يظهر عند تسجيل الدخول */
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .eye {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            background: #a16a16;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: blink 1.5s infinite;
+            display: none; /* يظهر عند تسجيل الدخول */
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                height: 40px;
+            }
+            50% {
+                height: 20px;
+            }
+        }
+
+        .loading-text {
+            position: absolute;
+            bottom: 20px;
+            font-size: 24px;
+            letter-spacing: 2px;
+            animation: fade 2s infinite;
+            display: none; /* يظهر عند تسجيل الدخول */
+        }
+
+        @keyframes fade {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            width: 350px;
+            overflow: hidden;
+            text-align: center;
+            display: none; /* يظهر بعد التحميل */
+            transform: scale(2.1);
+        }
+
+        .form-header {
+            background-color: #a16a16;
+            color: white;
+            padding: 20px;
+        }
+
+        .form-header h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .form-content {
+            padding: 20px;
+        }
+
+        input {
+            letter-spacing: 1px;
+            font-weight: 700;
+            font-size: 15px;
+            width: 90%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #a16a16;
+            border-radius: 50px;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #a16a16;
+            outline: none;
+        }
+
+        button {
+            background-color: #a16a16;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .success {
+            color: green;
+            margin-top: 10px;
+        }
+
+        .toggle-button {
+            background: none;
+            border: none;
+            color: #a16a16;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .welcome {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="logo">SPY<span style="color: #a16a16;">show</span></div>
+    <div class="loader">
+        <div class="eye"></div>
+    </div>
+    <div class="loading-text">Loading...</div>
+
+    <div class="container">
+        <div class="form-header">
+            <h2 id="formTitle">Login</h2>
+        </div>
+        <div class="form-content">
+            <div id="loginForm">
+              <br>
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button onclick="login()">Login</button>
+                <div id="loginError" class="error"></div>
+                <button class="toggle-button" onclick="toggleForms()">Don't have an account? Create Account</button>
+                <button class="toggle-button" onclick="showResetPassword()">Forgot Password?</button> <!-- زر نسيت كلمة المرور -->
+            </div>
+            <div id="registerForm" style="display: none;">
+                <input type="text" id="name" placeholder="First Name" required>
+                <input type="text" id="surname" placeholder="Last Name" required>
+                <input type="email" id="regEmail" placeholder="Email" required>
+                <input type="password" id="regPassword" placeholder="Password" required>
+                <button onclick="register()">Register</button>
+                <div id="regError" class="error"></div>
+                <div id="regSuccess" class="success"></div>
+                <button class="toggle-button" onclick="toggleForms()">Already have an account? Login</button>
+            </div>
+            <div id="resetPasswordForm" style="display: none;">
+                <input type="email" id="resetEmail" placeholder="Enter your email" required>
+                <button onclick="sendResetEmail()">Send Reset Email</button>
+                <div id="resetError" class="error"></div>
+                <div id="resetSuccess" class="success"></div>
+                <button class="toggle-button" onclick="toggleForms()">Back to Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyByJzPN4z9F6Srxdo6HE8QSc16pZVPaxKg",
+            authDomain: "spyshow-6.firebaseapp.com",
+            projectId: "spyshow-6",
+            storageBucket: "spyshow-6.appspot.com",
+            messagingSenderId: "118262590800",
+            appId: "1:118262590800:web:0b67d31a1d4b9be1b09055",
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // بيانات تسجيل دخول الأدمن
+        const adminEmail = "adminazeddine000@gmail.com"; // الايميل ديال الأدمين
+        const adminPassword = "adminazeddine12345"; // كلمة السر ديال الأدمين
+
+        window.login = function() {
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const errorMessage = document.getElementById('loginError');
+            errorMessage.textContent = "";
+            document.querySelector('.loader').style.display = 'block'; 
+            document.querySelector('.eye').style.display = 'block'; 
+            document.querySelector('.loading-text').style.display = 'block'; 
+            document.querySelector('.logo').style.opacity = '1'; 
+
+            // إخفاء نموذج تسجيل الدخول بالكامل
+            document.querySelector('.container').style.display = 'none';
+
+            if (email === adminEmail && password === adminPassword) {
+                setTimeout(() => {
+                    window.location.href = "messages.html"; // توجيه للأدمن
+                }, 6000); // تأخير 6 ثواني
+                return;
+            }
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    setTimeout(() => {
+                        window.location.href = "onflix.html"; 
+                    }, 6000);
+                })
+                .catch((error) => {
+                    errorMessage.textContent = error.message;
+                    document.querySelector('.loader').style.display = 'none'; 
+                    document.querySelector('.eye').style.display = 'none'; 
+                    document.querySelector('.loading-text').style.display = 'none'; 
+                    document.querySelector('.container').style.display = 'block'; 
+                });
+        };
+
+        window.register = function() {
+            const name = document.getElementById('name').value;
+            const surname = document.getElementById('surname').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            const errorMessage = document.getElementById('regError');
+            const successMessage = document.getElementById('regSuccess');
+            errorMessage.textContent = "";
+            successMessage.textContent = "";
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    successMessage.textContent = "Account created successfully!";
+                    setTimeout(() => {
+                        window.location.href = "onflix.html";
+                    }, 4000);
+                })
+                .catch((error) => {
+                    errorMessage.textContent = error.message;
+                });
+        };
+
+        window.showResetPassword = function() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('resetPasswordForm').style.display = 'block';
+        };
+
+        window.sendResetEmail = function() {
+            const email = document.getElementById('resetEmail').value;
+            const errorMessage = document.getElementById('resetError');
+            const successMessage = document.getElementById('resetSuccess');
+            errorMessage.textContent = "";
+            successMessage.textContent = "";
+
+            sendPasswordResetEmail(auth, email)
+                .then(() => {
+                    successMessage.textContent = "Password reset email sent!";
+                })
+                .catch((error) => {
+                    errorMessage.textContent = error.message;
+                });
+        };
+
+        window.toggleForms = function() {
+            const regForm = document.getElementById('registerForm');
+            const loginForm = document.getElementById('loginForm');
+            const resetForm = document.getElementById('resetPasswordForm');
+            const formTitle = document.getElementById('formTitle');
+
+            if (resetForm.style.display === "block") {
+                resetForm.style.display = "none";
+                loginForm.style.display = "block";
+                formTitle.textContent = "Login";
+            } else if (regForm.style.display === "none") {
+                regForm.style.display = "block";
+                loginForm.style.display = "none";
+                formTitle.textContent = "Create a New Account";
+            } else {
+                regForm.style.display = "none";
+                loginForm.style.display = "block";
+                formTitle.textContent = "Login";
+            }
+        };
+
+        setTimeout(() => {
+            document.querySelector('.loader').style.display = 'none';
+            document.querySelector('.loading-text').style.display = 'none';
+            document.querySelector('.container').style.display = 'block'; 
+        }, 5000);
+    </script>
+</body>
+</html>

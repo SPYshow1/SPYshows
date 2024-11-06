@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+<meta name="description" content="" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<title> Onflix </title>
+
+<!--- start css --->
+
+<style>
+
+ body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: #020b1a;
+}
+
+::selection{
+  background: #a16a16;
+  color: #eee;
+}
+
+.headers{
+  background: #020b1a;
+  width: 100%;
+  height: 160px;
+  font-size: 40px;
+  top: 0;
+  z-index: 5;
+}
+
+.all_of_headers{
+  display: flex;
+  gap: 65%;
+  color: #eee;
+  margin-left: 57rem;
+  margin-top: 50px;
+  align-items: center;
+  position: absolute;
+  opacity: 0.8;
+}
+
+.header_of_span{
+  color: #a16a16;
+}
+
+.resultSearch{
+  font-size: 40px;
+  color: red;
+  margin-top: -130px;
+  margin-left: 100px;
+}
+
+#searchInput{
+ font-size: 35px;
+ outline:none;
+ border: none;
+ background: #020b1a;
+ color: #eee;
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal; 
+ width: 40rem;
+ height: 90px;
+ border-radius: 50px;
+ padding-left: 20px;
+ letter-spacing: 2px;
+}
+
+#searchButton{
+  background: none;
+  outline: none;
+  border: none;
+  padding: 20px;
+  text-align: center;
+  border-radius: 50px;
+  height: 80px;
+  padding-top: px;
+  opacity: 0.8;
+  margin-left: -47rem;
+}
+
+#srch{
+  color: #eee;
+  font-size: 40px;
+  left: 40px;
+}
+
+.imageEdit{
+  margin-top: 100px;
+  margin-left: 20px;
+  border-radius: 30px;
+}
+
+.nameOFtitle{
+    font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal; 
+  margin-left: 350px;
+  margin-top: -420px;
+  font-size: 40px;
+}
+
+.description{
+  color: #eee;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  width: 400px;
+  margin-left: 350px;
+  margin-top: -20px;
+}
+
+.container{
+  color: #eee;
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal; 
+  font-size: 35px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+
+</style>
+</head>
+
+<body>
+  
+<header>
+<div class="headers">
+<!--- start header of name --->
+
+<div class="all_of_headers">
+
+
+
+<!--- end header of name --->
+
+<!--- start header of bar menu --->
+
+<div class="header_of_menu">
+  <i class="fa-solid fa-chevron-left" id="menu_bar" onclick="onflix('onflix.html')"></i> 
+</div>
+
+</div>
+
+<!--- end header of bar menu --->
+
+</div>
+</header>
+
+<div class="resultSearch">
+<input type="text" id="searchInput" placeholder="Search SPYshow" />
+    <button id="searchButton"><i class="fa-solid fa-search" id="srch"></i></button>
+</div>
+    <div id="results"></div>
+
+
+<script>
+  
+document.getElementById('searchButton').addEventListener('click', function() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = '';
+  
+    // دالة للبحث في ملف JSON
+    const searchInFile = (fileName) => {
+      return fetch(fileName)
+        .then(response => response.json())
+        .then(data => {
+          let found = false;
+          for (let key in data) {
+            const film = data[key];
+            if (film.title.toLowerCase().includes(searchInput)) {
+              found = true;
+              resultsDiv.innerHTML += `
+                              <div class="imageEdit">
+                                  <img onclick="window.location.href='listOFseries1.html?film=${film.link}'" 
+                                       src="${film.kind}" style="width: 300px; height: 400px; border-radius: 10px;">
+                              </div>
+                              <h2 class="nameOFtitle" style="color: #eee">${film.title}</h2>
+                              <p class="description">${film.description}</p>
+                          `;
+            }
+          }
+          return found; // نرجع قيمة found
+        })
+        .catch(error => {
+          console.error('Something went wrong', error);
+        });
+    };
+  
+    Promise.all([
+          searchInFile('listOFsearch1.json'),
+          searchInFile('listOFsearch2.json')
+      ]).then(results => {
+
+      if (!results.some(found => found)) {
+        resultsDiv.innerHTML = `
+                  <div class="container">
+                      Oops! Something is wrong, Try again please!
+                  </div>`;
+      }
+    });
+  });
+  
+  function onflix(page) {
+    window.location.href = page;
+  }
+  
+    </script>
+</body>
+</html>

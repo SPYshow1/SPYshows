@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>Onflix</title>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta charset="UTF-8" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+<meta name="description" content="" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: #020b1a;  color: #fff;
+            font-family: 'Nunito Sans', sans-serif;
+            color: #fff;
+        }
+
+        ::selection {
+            background: #ff5722;
+            color: #fff;
+        }
+
+        header {
+            background: #020b1a;      color: #fff;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            height: 100px;
+            top: 0;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .header-title {
+            font-size: 40px;
+            text-align: center;
+letter-spacing: 2px;
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-size: 55px;
+            margin-top: 10px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 100px auto;
+            width: 300px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            margin-top: 800px;
+            transform: scale(1.5)
+            
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #a16a16;
+        }
+
+        .g_id_signin {
+            margin: 20px 0;
+        }
+
+        #signOutButton {
+            display: none;
+            margin-top: 20px;
+            background-color: #db4437;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #signOutButton:hover {
+            background-color: #c13527;
+        }
+
+        .user-info {
+            margin-top: 20px;
+            color: #eee;
+        }
+
+        .user-info img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+        }
+
+        .error-message {
+            color: #ff0000;
+            margin: 10px 0;
+        }
+.leftt{
+  margin-left: 25rem;
+  font-size: 40px;
+  margin-top: -100px;
+  position: absolute;
+}
+
+a{
+  color: #fff;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="header-title" style="color: #a16a16;">Pro<span style="color: #a16a16;">File</span></h1>
+      <a href="onflix.html"><i class="fa-solid fa-chevron-left leftt"></i></a>
+    </header>
+
+    <div class="container">
+        <h2>Sign Up Google</h2>
+        <div id="g_id_onload"
+             data-client_id="477036691204-hrbshhcu2hit105baajc4cej0e0sudo4.apps.googleusercontent.com"
+             data-callback="handleCredentialResponse">
+        </div>
+        <div class="g_id_signin" data-type="standard"></div>
+        <div id="errorMessage" class="error-message"></div>
+        <button id="signOutButton" onclick="signOut()">Sign Out</button>
+        
+        <div id="userInfo" class="user-info" style="display: none;">
+            <img id="userImage" src="" alt="Picture of profile">
+            <h3>Welcome <span id="userName"></span>!</h3>
+            <p><span id="userEmail"></span></p>
+        </div>
+    </div>
+
+    <script>
+        let auth2;
+
+        function handleCredentialResponse(response) {
+            const credential = response.credential;
+            const payload = parseJwt(credential);
+
+            localStorage.setItem('userName', payload.name);
+            localStorage.setItem('userEmail', payload.email);
+            localStorage.setItem('userImage', payload.picture);
+
+            displayUserInfo(payload);
+        }
+
+        function parseJwt(token) {
+            const base64Url = token.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            return JSON.parse(window.atob(base64));
+        }
+
+        function signOut() {
+            const confirmSignOut = confirm("Are you sure?");
+            if (confirmSignOut) {
+                clearUserInfo();
+                localStorage.removeItem('userName');
+                localStorage.removeItem('userEmail');
+                localStorage.removeItem('userImage');
+            }
+        }
+
+        function displayUserInfo(payload) {
+            document.getElementById('userName').innerText = payload.name;
+            document.getElementById('userEmail').innerText = payload.email;
+            document.getElementById('userImage').src = payload.picture;
+            document.getElementById('userInfo').style.display = 'block';
+            document.getElementById('signOutButton').style.display = 'block';
+            document.getElementById('errorMessage').innerText = '';
+        }
+
+        function clearUserInfo() {
+            document.getElementById('signOutButton').style.display = 'none';
+            document.getElementById('userInfo').style.display = 'none';
+        }
+
+        window.onload = function() {
+            const userName = localStorage.getItem('userName');
+            const userEmail = localStorage.getItem('userEmail');
+            const userImage = localStorage.getItem('userImage');
+
+            if (userName && userEmail && userImage) {
+                displayUserInfo({ name: userName, email: userEmail, picture: userImage });
+            }
+
+            gapi.load('auth2', function() {
+                auth2 = gapi.auth2.init({
+                    client_id: '477036691204-hrbshhcu2hit105baajc4cej0e0sudo4.apps.googleusercontent.com'
+                });
+            });
+        };
+    </script>
+</body>
+</html>

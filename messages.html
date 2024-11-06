@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>View Messages</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <meta charset="UTF-8" />
+  
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+  
+        <meta name="description" content="" />
+  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+  
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap" rel="stylesheet">
+  
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+  
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #020b1a, #020b1a);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        #messagesContainer {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px;
+            transition: transform 0.3s;
+            transform: scale(1.4);
+        }
+        h2 {
+            text-align: center;
+            color: #a16a16;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ff7e5f;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            position: relative;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+                        font-size: 20px;
+                        font-weight: 700;
+        }
+
+        .message strong {
+            display: block;
+            color: black;
+            font-weight: 700;
+            font-size: 28px;
+
+        }
+        .message-details {
+            display: none;
+            padding: 10px;
+            border-top: 1px solid #ff7e5f;
+            margin-top: 10px;
+
+        }
+        button.delete {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 15px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button.delete:hover {
+            background-color: #c82333;
+            transform: scale(1.05);
+        }
+        button.delete:focus {
+            outline: none;
+        }
+        p.empty-message {
+            text-align: center;
+            color: #6c757d;
+            font-style: italic;
+        }
+  
+        header {
+          background: #020b1a;
+          color: #fff;
+          padding: 20px;
+          position: fixed;
+          width: 100%;
+          height: 100px;
+          top: 0;
+          z-index: 10;
+          text-align: center;
+        }
+
+        .header-title {
+          font-size: 40px;
+          text-align: center;
+          letter-spacing: 2px;
+          font-family: "Playwrite GB S", cursive;
+          font-optical-sizing: auto;
+          font-weight: <weight>;
+          font-style: normal;
+          font-size: 55px;
+          margin-top: 10px;
+        }
+
+        .leftt {
+          margin-left: 25rem;
+          font-size: 40px;
+          margin-top: -100px;
+          position: absolute;
+        }
+a{
+  color: #eee
+}
+    </style>
+</head>
+<body>
+  
+    <header>
+      <h1 class="header-title" style="color: #a16a16;">Admin<span style="color: #a16a16;"> </span></h1>
+      <a href="index.html"><i class="fa-solid fa-chevron-left leftt"></i></a>
+    </header>
+    
+
+<div id="messagesContainer">
+    <h2>View Messages</h2>
+</div>
+
+<script>
+    function displayMessages() {
+        const messages = JSON.parse(localStorage.getItem('messages')) || [];
+        const messagesContainer = document.getElementById('messagesContainer');
+
+        messagesContainer.innerHTML = '<h2>View Messages</h2>'; // تفريغ المحتوى القديم
+
+        messages.forEach((msg, index) => {
+            const messageElement = document.createElement('div');
+            messageElement.className = 'message';
+            messageElement.innerHTML = `
+                <strong>${msg.email}:</strong> ${msg.message.substring(0, 30)}... 
+                <span class="message-details">${msg.message}</span>
+                <button class="delete" onclick="deleteMessage(${index})">delete</button>`;
+                
+            // إضافة حدث للنقر على الرسالة
+            messageElement.onclick = function() {
+                const details = messageElement.querySelector('.message-details');
+                details.style.display = details.style.display === 'none' || !details.style.display ? 'block' : 'none';
+            };
+
+            messagesContainer.appendChild(messageElement);
+        });
+
+        // إذا لم تكن هناك أي رسالة، اعرض رسالة فارغة
+        if (messages.length === 0) {
+            messagesContainer.innerHTML += '<p class="empty-message">no message</p>';
+        }
+    }
+
+    function deleteMessage(index) {
+        const messages = JSON.parse(localStorage.getItem('messages')) || [];
+        messages.splice(index, 1); // حذف الرسالة
+        localStorage.setItem('messages', JSON.stringify(messages)); // تحديث التخزين
+        displayMessages(); // إعادة عرض الرسائل
+    }
+
+    // استدعاء الدالة عند تحميل الصفحة
+    window.onload = displayMessages;
+</script>
+
+</body>
+</html>
+r
