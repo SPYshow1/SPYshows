@@ -187,4 +187,9 @@ close.addEventListener("click", () => {
 })
 
 
+    // هنا كنفحص واش المستخدم مسجل الدخول مثلا أو عندو صلاحية
+    if (!localStorage.getItem("loggedIn")) { // إذا ما كانش مسجل
+        window.location.href = "index.html"; // يوجهه للصفحة الرئيسية
+    }
+
 
