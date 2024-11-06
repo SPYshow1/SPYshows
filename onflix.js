@@ -1,3 +1,4 @@
+
 let menus = document.getElementById("menu_bar")
 
 let close = document.getElementById("close")
@@ -187,9 +188,40 @@ close.addEventListener("click", () => {
 })
 
 
-    // هنا كنفحص واش المستخدم مسجل الدخول مثلا أو عندو صلاحية
-    if (!localStorage.getItem("loggedIn")) { // إذا ما كانش مسجل
-        window.location.href = "index.html"; // يوجهه للصفحة الرئيسية
+
+
+
+
+
+// تحميل Firebase SDK
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+
+// إعدادات Firebase الخاصة بك
+const firebaseConfig = {
+  apiKey: "AIzaSyByJzPN4z9F6Srxdo6HE8QSc16pZVPaxKg",
+  authDomain: "spyshow-6.firebaseapp.com",
+  projectId: "spyshow-6",
+  storageBucket: "spyshow-6.appspot.com",
+  messagingSenderId: "118262590800",
+  appId: "1:118262590800:web:0b67d31a1d4b9be1b09055"
+};
+
+// تهيئة Firebase
+const app = initializeApp(firebaseConfig);
+
+// الحصول على خدمة التوثيق
+const auth = getAuth(app);
+
+// التحقق من حالة المستخدم فور تحميل الصفحة
+document.addEventListener("DOMContentLoaded", () => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // المستخدم مسجل دخولًا، خليه يبقى في الصفحة
+      console.log("User is logged in:", user);
+    } else {
+      // المستخدم ما مسجلش دخول، حوله مباشرة لصفحة set.html
+      window.location.href = "set.html";
     }
-
-
+  });
+});
