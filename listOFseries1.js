@@ -34,7 +34,7 @@ let films = {
 
 };
 
-fetch('films.json')
+fetch('https://raw.githubusercontent.com/SPYshow1/SPYshows/main/films.json')
   .then(response => response.json())
   .then(data => {
     films = data; 
