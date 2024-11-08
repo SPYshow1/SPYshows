@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+      <meta charset="UTF-8" />
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+  
+      <meta name="description" content="" />
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+      <link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap" rel="stylesheet">
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>messages</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #020b1a;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-top: 20px;
+            text-align: center;
+            color: #a16a16;
+            font-family: "Playwrite GB S", cursive;
+            height: 70px;
+        }
+
+        .messages {
+            max-height: 2000rem;
+            overflow-y: scroll;
+            margin-bottom: 100px;
+            padding: 10px;
+            border-radius: 5px;
+            background: #020b1a;
+            height: 101rem;
+            position: relative;
+        }
+
+        .message {
+            margin: 15px 20px;
+            padding: 15px 20px;
+            border-radius: 30px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            transition: background-color 0.3s;
+            max-width: fit-content;
+            font-size: 30px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .user-message {
+            background: linear-gradient(to right, #23262b, #383b42);
+            margin-left: auto; /* Align to right for user messages */
+        }
+
+        .admin-message {
+            background: linear-gradient(to right, #390f69, #5a2696);
+            margin-right: auto; /* Align to left for admin messages */
+        }
+
+        .input-container {
+            display: flex;
+            position: fixed;
+            bottom: 20px; /* Position at the bottom */
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+            width: 85%; /* Adjust width */
+            color: #eee;
+        }
+
+        #messageInput {
+            padding: 35px;
+            color: #eee;
+            outline: none;
+            font-size: 30px;
+            border-radius: 60px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            width: 100%;
+            background: #333;
+            border: none;
+            margin-right: 80px;
+        }
+
+        button {
+            padding: 15px;
+            border: none;
+            background: #5a2696; /* Button color */
+            color: white;
+            border-radius: 70px;
+            cursor: pointer;
+            font-size: 20px;
+            margin-top: 15px;
+        }
+
+        .airSend {
+            font-size: 30px;
+            color: white;
+            width: 65px;
+            border-radius: 60px;
+        }
+
+        .time {
+            font-size: 20px;
+            color: #ccc;
+            margin-top: 5px;
+        }
+
+        .username {
+            font-weight: bold;
+        }
+
+        .notification {
+            position: fixed;
+            bottom: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 30px 30px;
+            border-radius: 5px;
+            display: none;
+            z-index: 100;
+            font-size: 20px;
+        }
+
+        .leftt {
+            margin-left: 55rem;
+            font-size: 40px;
+            margin-top: -80px;
+            position: absolute;
+        }
+        a {
+            color: #eee;
+        }
+        .action-menu {
+            display: none; /* Initially hidden */
+            position: fixed;
+            background-color: rgba(50, 50, 50, 0.9);
+            border-radius: 10px;
+            padding: 40px;
+            z-index: 10;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            animation: fadeIn 0.7s;
+        }
+
+        .action-menu button {
+            padding: 5px 10px;
+            border: none;
+            background: none;
+            color: white;
+            cursor: pointer;
+            font-size: 30px;
+            display: block;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Notification style */
+
+    </style>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getDatabase, ref, push, onChildAdded, remove, get } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyByJzPN4z9F6Srxdo6HE8QSc16pZVPaxKg",
+            authDomain: "spyshow-6.firebaseapp.com",
+            databaseURL: "https://spyshow-6-default-rtdb.firebaseio.com",
+            projectId: "spyshow-6",
+            storageBucket: "spyshow-6.firebasestorage.app",
+            messagingSenderId: "118262590800",
+            appId: "1:118262590800:web:0b67d31a1d4b9be1b09055",
+            measurementId: "G-HSYBVHH8T3"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        let currentUser = localStorage.getItem("currentUser");
+        const adminUsers = ['admin', 'admina'];
+        let notificationDiv;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            notificationDiv = document.createElement('div');
+            notificationDiv.classList.add('notification');
+            document.body.appendChild(notificationDiv);
+
+            const messageInput = document.getElementById("messageInput");
+            const sendButton = document.getElementById("sendButton");
+            const messagesDiv = document.getElementById("messages");
+
+            if (!currentUser) {
+                showNotification("You must be logged in.");
+                window.location.href = "loginMessage.html";
+            }
+
+            sendButton.addEventListener("click", () => {
+                const message = messageInput.value;
+                if (message && currentUser) {
+                    checkIfBanned(currentUser).then(isBanned => {
+                        if (isBanned) {
+                            showNotification("You cannot send messages because you are banned.");
+                        } else {
+                            const messageData = {
+                                text: message,
+                                timestamp: Date.now(),
+                                user: currentUser
+                            };
+                            push(ref(database, 'messages'), messageData);
+                            messageInput.value = '';
+                        }
+                    });
+                } else {
+                    showNotification("Please enter a message.");
+                }
+            });
+
+            onChildAdded(ref(database, 'messages'), (snapshot) => {
+                const message = snapshot.val();
+                const messageKey = snapshot.key;
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.classList.add(message.user === currentUser ? 'user-message' : 'admin-message');
+
+                const messageText = document.createElement('div');
+                messageText.innerHTML = `<span class="username">${message.user}</span>: ${message.text}`;
+                messageElement.appendChild(messageText);
+
+                const messageTime = document.createElement('div');
+                messageTime.textContent = new Date(message.timestamp).toLocaleString();
+                messageTime.classList.add('time');
+                messageElement.appendChild(messageTime);
+
+                // Action menu
+                const actionMenu = document.createElement('div');
+                actionMenu.classList.add('action-menu');
+                actionMenu.innerHTML = `
+                    <button class="copy">Copy</button>
+                    <button class="delete-own">Delete for Me</button>
+                    <button class="reply">Reply</button>
+                `;
+                document.body.appendChild(actionMenu);
+
+                // Show action menu on click
+                messageElement.addEventListener('click', (event) => {
+                    actionMenu.style.display = 'block';
+                    actionMenu.style.top = `${event.clientY}px`;
+                    actionMenu.style.left = `${event.clientX}px`;
+                });
+
+                // Hide action menu when clicking outside
+                document.addEventListener('click', (event) => {
+                    if (!actionMenu.contains(event.target) && !messageElement.contains(event.target)) {
+                        actionMenu.style.display = 'none';
+                    }
+                });
+
+                // Copy message
+                actionMenu.querySelector('.copy').addEventListener('click', (event) => {
+                    event.stopPropagation(); // Prevent the click from propagating to the document
+                    navigator.clipboard.writeText(message.text).then(() => {
+                        showNotification("Copied!");
+                        actionMenu.style.display = 'none'; // Hide the action menu after copying
+                    });
+                });
+
+                // Delete own message
+                actionMenu.querySelector('.delete-own').addEventListener('click', (event) => {
+                    event.stopPropagation(); // Prevent the click from propagating to the document
+                    if (message.user === currentUser) {
+                        remove(ref(database, `messages/${messageKey}`)).then(() => {
+                            messageElement.remove();
+                        }).catch((error) => {
+                            showNotification("Unable to delete message: " + error.message);
+                        });
+                    } else {
+                        showNotification("You can only delete your own messages.");
+                    }
+                    actionMenu.style.display = 'none'; // Hide the action menu after deletion
+                });
+
+                // Reply action
+                actionMenu.querySelector('.reply').addEventListener('click', (event) => {
+                    event.stopPropagation(); // Prevent the click from propagating to the document
+                    messageInput.value = `@${message.user} `; // Pre-fill input with reply mention
+                    actionMenu.style.display = 'none'; // Hide the action menu after replying
+                });
+
+                messagesDiv.appendChild(messageElement);
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            });
+        });
+
+        async function checkIfBanned(user) {
+            const bannedRef = ref(database, `bannedUsers/${user}`);
+            const snapshot = await get(bannedRef);
+            return snapshot.exists();
+        }
+
+        function showNotification(message) {
+            notificationDiv.textContent = message;
+            notificationDiv.style.display = 'block';
+            setTimeout(() => {
+                notificationDiv.style.display = 'none';
+            }, 3000); // Hide after 3 seconds
+        }
+    </script>
+</head>
+<body>
+    <h1>Movies chat</h1>
+      <a href="loginMessage.html"><i class="fa-solid fa-chevron-left leftt"></i></a>
+
+    <div id="messages" class="messages"></div>
+    <div class="input-container">
+        <input type="text" id="messageInput" placeholder="Type your message here...">
+        <button id="sendButton"><i class="fas fa-paper-plane airSend"></i></button>
+    </div>
+</body>
+</html>
