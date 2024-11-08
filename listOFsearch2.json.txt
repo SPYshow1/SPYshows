@@ -1,8 +1,0 @@
-{
-  "turk1":        {
-    "title": "<p style=\"display: none\">action, sci-fi, thriller, drama, romance, 2024</p>Kilometre 3391",
-    "kind": "https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FwQp5H2QxaTVdyYZhcDMSk4tdAdb.jpg",
-    "link": "turk1",
-    "description": "In a dystopian future, a team of survivors embarks on a perilous journey across a desolate landscape. Along the way, they face unforeseen threats and uncover dark secrets about their world."
-  }
-}
