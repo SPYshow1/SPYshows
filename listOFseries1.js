@@ -28,6 +28,38 @@ await navigator.share({
 
 // start section of series
 
+  
+ "r4":            {
+   
+
+   
+    "wa": "https://fdewsdc.sbs/embed/6l97ukfs4ita",
+    
+    "title": "Inside out 2015",
+    
+    "kind": "Adventure • Comedy • Animation",
+    
+    "description": " After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions - Joy, Fear, Anger, Disgust and Sadness - conflict on how best to navigate a new city, house, and school."
+    ,
+    
+    "trailer": "<br><br><br><div class=\"video_of_movie\"><iframe width=\"900\" height=\"500\" style=\"border-radius: 40px;\" src=\"https://www.youtube.com/embed/Yr3tv1hW1gg?autoplay=1&mute=1&loop=1&playlist=Yr3tv1hW1gg\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe></div>"
+  },
+ "r5":            {
+   
+
+   
+    "wa": "https://fdewsdc.sbs/embed/pcnj49sgb93e",
+    
+    "title": "Inside out 2024",
+    
+    "kind": "Adventure • Comedy • Animation",
+    
+    "description": "In Inside Out 2 2024, Riley enters her teenage years, facing new emotions like Anxiety, Envy, and Embarrassment. As she joins a hockey camp, these emotions create conflicts, impacting her friendships. Eventually, Riley finds balance with the help of her core emotions, learning to embrace both old and new aspects of herself."
+    ,
+    
+    "trailer": "<br><br><br><div class=\"video_of_movie\"><iframe width=\"900\" height=\"500\" style=\"border-radius: 40px;\" src=\"https://www.youtube.com/embed/LEjhY15eCx0?autoplay=1&mute=1&loop=1&playlist=LEjhY15eCx0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe></div>"
+  },
+     
   blacklight2:  {
 
     wa: "https://fdewsdc.sbs/embed/cgiw659m1guk",
