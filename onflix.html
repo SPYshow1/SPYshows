@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8" />
+
+
+
+
+<script async src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js"></script>
+<script async src="https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js"></script>
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+<meta name="description" content="" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<title> Onflix </title>
+<link rel="stylesheet" href="onflix.css">
+
+</head>
+<body>
+  
+<!--- start header --->
+
+<header>
+<div class="headers">
+
+<!--- start header of name --->
+
+<div class="all_of_headers">
+
+<div class="header_of_name">
+  <p class="header_of_title">
+    SPY<span class="header_of_span">show</span>
+  </p>
+</div>
+
+<!--- end header of name --->
+
+<!--- start header of bar menu --->
+
+<div class="header_of_menu">
+  <i class="fa-solid fa-bars-staggered" id="menu_bar"></i> 
+</div>
+
+
+
+</div>
+
+<!--- end header of bar menu --->
+
+</div>
+
+</header>
+
+<!--- end header --->
+
+<!--- start section --->
+
+
+
+<section>
+
+<!--- start header of ul menu --->
+
+<div class="hide" id="menu">
+<div class="header_of_menu_ul">
+  <ul class="menu_of_ul">
+    
+ <li class="menu_of_home">   <a href="#">Home </a><i class="fa-solid fa-home"></i><i class="fa-solid fa-close" id="close"></i></li>
+   
+    
+    
+    <span class="header_of_line"></span>
+
+    <li class="menu_of_ductionary"><a href="infoMessages.html">Chat about movies </a> <i class="fa-solid fa-paper-plane"></i></li>
+
+    <li class="menu_of_search"><a href="Reels.html">Reels of trailler</a> <i class="fa-solid fa-clapperboard"></i></a>
+    
+    <li class="menu_of_search"><a href="search.html">Search</a> <i class="fa-solid fa-search"></i></li></a>
+    
+    
+    <li class="menu_of_about"><a href="#">About us</a> <i class="fa-solid fa-info"></i></li>
+    
+    <li class="menu_of_faq"><a href="#">FAQ</a></li>
+
+    <li class="menu_of_contact"><a href="contact.html">Contact support</a> <i class="fa-brands fa-instagramm">    </i><i class="fa-brands fa-facebookk"></i><i class="fa-solid fa-envelope"></i></li>
+
+
+    <li class="menu_of_search"><a href="donatePaypal.html">Donate to the developer</a> <i class="fa-solid fa-hand-holding-dollar"></i></li>
+
+  
+  <div class="login_signup">
+    <a href="index1.html"><button class="signup">Logout</button>
+    </a>
+
+  </div>
+  
+  </ul>
+</div>
+
+<!--- end header of ul menu --->
+
+</section>
+
+<!--- start sections movies --->
+
+<br>
+<br>
+
+<div class="section_of_title">
+  <p class="section_of_p">Just added<div class="right_arrow"><i class="fa-solid fa-list arrow"></i></div></p>
+</>
+<div class="section_of_line"></div>
+
+<!--- start arrows click --->
+
+<div class="arrows_on_section" id="sec"> 
+<div class="arrow_of_left">
+  <i class="fa-solid fa-chevron-left" id="arrowleft"></i>
+</div>
+
+<div class="arrow_of_right">
+  <i class="fa-solid fa-chevron-right" id="arrowright"></i>
+</div>
+
+</div>
+
+<!--- end arrows click --->
+
+<div class="movies_list">
+
+  <div class="list_of_movies">
+    <img onclick="window.location.href='listOFseries1.html?film=r3'" id="edit_pic" src="https://ntvb.tmsimg.com/assets/p28392807_v_h8_aa.jpg?w=1280&h=720" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <div class="list_of_movies">
+    <img onclick="window.location.href='listOFseries1.html?film=r2'" id="edit_pic" src="
+  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrIxzesLBrifsStl8uqg0Np-GUdDfVo9l11A&usqp=CAU" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <div class="list_of_movies">
+  <img onclick="window.location.href='listOFseries1.html?film=r1'" id="edit_pic" src="
+  https://i.ytimg.com/vi/_UtIVYTb8pM/maxresdefault.jpg" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  
+  <div class="list_of_movies">
+  <img onclick="window.location.href='listOFmovies.html?film=m1'" id="edit_pic" src="https://pic1.iqiyipic.com/image/20240918/ef/2b/a_100545233_m_601_en_720_405.jpg" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+
+
+  
+  <div class="list_of_movies">
+  <img onclick="window.location.href='listOFseries1.html?film=1'" id="edit_pic" src="https://i.ytimg.com/vi/efwnszG_Y_U/mqdefault.jpg" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+
+    <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+    <img onclick="window.location.href='listOFseries1.html?film=2'" id="edit_pic" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/Venom-Let-There-Be-Carnage.jpg" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+  
+    <div class="list_of_movies">
+      <img onclick="window.location.href='listOFmovies.html?film=w1'" id="edit_pic" src="https://img.hulu.com/user/v3/artwork/cf45235c-5faa-4859-81b1-ab0feed79d1d?base_image_bucket_name=image_manager&base_image=5c7a89a2-264f-4ed3-a2da-530aacbfa920&size=1200x630&format=webp" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+    
+  <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+    <img onclick="window.location.href='listOFseries1.html?film=3'" id="edit_pic" src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/04/abigail.jpg" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+  
+  <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+    <img onclick="window.location.href='listOFseries1.html?film=4'" id="edit_pic" src="https://cdn.telugu.yousay.tv/wp-content/uploads/sites/2/2024/09/12171144/Untitled-design-2024-09-12T165430.960.jpg" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+
+  <!--- end watch and list --->
+
+    <div class="list_of_movies">
+    <img onclick="window.location.href='listOFseries1.html?film=5'" id="edit_pic" src="https://pic-bstarstatic.akamaized.net/ugc/935955bd45de739c0391a48c2703e499.jpg@320w_180h_1e_1c_90q" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+  
+  <!--- end watch and list --->
+  
+      <div class="list_of_movies">
+    <img onclick="window.location.href='listOFseries1.html?film=6'" id="edit_pic" src="https://www.doostihaa.com/img/uploads/2024/08/Savi-2024-Poster.jpg" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+  
+  <!--- end watch and list --->
+  
+    <!--- end watch and list --->
+  
+      <div class="list_of_movies">
+    <img onclick="window.location.href='listOFseries1.html?film=7'" id="edit_pic" src="https://blog.spectrumfilmschool.com/uploads/images/202405/image_870x_6652177a42c50.jpg" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+
+  <!--- end watch and list --->
+  
+    <!--- end watch and list --->
+  
+      <div class="list_of_movies">
+    <img onclick="window.location.href='listOFseries1.html?film=8'" id="edit_pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_H-nMN2HCD-9uVDMLuXABL1VIf2wD9MI-CA&s" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+
+  
+  <!--- end watch and list --->
+  
+    <!--- end watch and list --->
+  
+      <div class="list_of_movies">
+    <img onclick="window.location.href='listOFseries1.html?film=9'" id="edit_pic" src="https://i.ytimg.com/vi/rJFkw3IyCW0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDM2rQRSLPRrTNZtprTpzVcUNrA1g" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+
+  
+  <!--- end watch and list --->
+  
+    <!--- end watch and list --->
+  
+      <div class="list_of_movies">
+    <img onclick="window.location.href='listOFseries1.html?film=10'" id="edit_pic" src="https://flixchatter.net/wp-content/uploads/2024/05/fallguymovie-poster.jpg" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+  
+  <!--- end watch and list --->
+  
+    <!--- end watch and list --->
+  
+      <div class="list_of_movies">
+    <img onclick="window.location.href='listOFseries1.html?film=11'" id="edit_pic" src="https://material.asset.catchplay.com/NBC-ID-001-A1037/artworks/posters/NBC-ID-001-A1037-P544.jpg?hash=1728330071" style="width: 600px; height:350px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+
+  
+  <!--- end watch and list --->
+  
+</div>
+
+<!--- end sections movies --->
+
+<!--- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--->
+
+<!--- start sections movies --->
+
+<div class="alls_of_everything">
+
+<div class="section_of_title">
+  <p class="section_of_p">Most popular <div class="right_arrow1"><i class="fa-solid fa-list arrow"></i></div></p>
+</>
+<div class="section_of_line1"></div>
+
+<!--- start arrows click --->
+
+<div class="arrows_on_section"> 
+<div class="arrow_of_left">
+  <i class="fa-solid fa-chevron-left" id="arrowleft1"></i>
+</div>
+
+<div class="arrow_of_right">
+  <i class="fa-solid fa-chevron-right" id="arrowright1"></i>
+</div>
+
+</div>
+
+<br>
+
+<!--- end arrows click --->
+
+<div class="movies_list1">
+  
+    <div class="list_of_movies">
+      <img onclick="window.location.href='listOFmovies.html?film=napoleon1'" id="edit_pic" src="https://hips.hearstapps.com/hmg-prod/images/napoleon-poster-66a8adc0a8d5c.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+    
+    
+  
+    <div class="list_of_movies">
+      <img onclick="window.location.href='listOFmovies.html?film=e1'" id="edit_pic" src="https://m.media-amazon.com/images/M/MV5BODJjMGM1M2ItMDZkNC00YjcyLTllODYtNzhlNDRlMmQ4MmQ4XkEyXkFqcGc@._V1_.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  
+    <div class="list_of_movies">
+      <img onclick="window.location.href='listOFmovies.html?film=q1'" id="edit_pic" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_BinV_vc8Mlvbb9-g27_rXbSSyq6d58So_LcE6Nrw1oDJRA7dZP_sTxQQw6cBmiVpmCvRwU2ueJx6SFHh_UEQvAYoqRe3Ag-H8llsz6cJsX5HXpu5kVh2sCNXcSkeenqe09HLIO2Nx-_TS4yvEslehMRex-YmUGl7U-RpTpECY4DX78FLJS3c9wt36f3O/s16000/shogun.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <div class="list_of_movies">
+    <img onclick="window.location.href='listOFseries1.html?film=12'" id="edit_pic" src="https://resizing.flixster.com/faHJvpAWIdAyiTu8Xv1p_CiCfBA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p27184779_v_v10_aa.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+  
+    <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=2'" id="edit_pic" src="https://i.pinimg.com/originals/93/82/02/93820285626ed53f4259d6f9bdb3f678.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <!--- start watch and list --->
+  
+  <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=13'" id="edit_pic" src="https://musicart.xboxlive.com/7/ff184d00-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <!--- start watch and list --->
+  
+  
+  <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=14'" id="edit_pic" src="https://opus.ing/_assets/reviews/rebel-ridge-jeremy-saulnier-poster.webp" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <!--- start watch and list --->
+  
+
+  <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=15'" id="edit_pic" src="https://i.pinimg.com/originals/9a/34/57/9a345748ad9365868596e7eef9bb5575.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <!--- start watch and list --->
+  
+
+  <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=16'" id="edit_pic" src="https://image.tmdb.org/t/p/w500/h7wJI6mctrDJ9wMbFfgrBUTn1LT.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <!--- start watch and list --->
+  
+
+  <!--- end watch and list --->
+  
+    <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=17'" id="edit_pic" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b28eae43-0119-40c2-8bde-cea7775ac6de/dgyspv0-b6c23678-f016-490e-8099-bdd5aaed256f.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IyOGVhZTQzLTAxMTktNDBjMi04YmRlLWNlYTc3NzVhYzZkZVwvZGd5c3B2MC1iNmMyMzY3OC1mMDE2LTQ5MGUtODA5OS1iZGQ1YWFlZDI1NmYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.XLt6Kk6utBt9JkK5JCypn896HC87WHkVSJ5XKGM-g-I" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <!--- start watch and list --->
+  
+
+  <!--- end watch and list --->
+  
+    <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=18'" id="edit_pic" src="https://assets-prd.ignimgs.com/2024/06/07/screenshot-2024-06-07-at-4-15-12-pm-1717794925270.png" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <!--- start watch and list --->
+  
+
+  <!--- end watch and list --->
+  
+    <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=19'" id="edit_pic" src="https://image.tmdb.org/t/p/original/2mPde54Cl50Ck8DHEUnvLt56tXR.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <!--- start watch and list --->
+  
+
+  <!--- end watch and list --->
+  
+    <!--- end watch and list --->
+  
+    <div class="list_of_movies">
+    <img onclick="window.location.href='listOFseries1.html?film=20'" id="edit_pic" src="https://friendshipheightsmd.gov/wp-content/uploads/2023/08/images-1.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>  
+  <!--- start watch and list --->
+  
+
+  <!--- end watch and list --->
+  
+    <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=21'" id="edit_pic" src="https://resizing.flixster.com/dG_GTqL1tViW3Lo9_DVdFeuGBUk=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p26626682_v_v8_ab.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <!--- start watch and list --->
+  
+  <!--- end watch and list --->
+  
+</div>
+</div>
+
+<!--- start discover of section --->
+
+
+<!--- end sections movies --->
+
+<!--- 
+
+
+--->
+
+<!--- start sections movies --->
+
+<div class="alls_of_everything1">
+
+<div class="section_of_title">
+  <p class="section_of_p">Popular movies <div class="right_arrow1"><i class="fa-solid fa-list arrow"></i></div></p>
+</>
+<div class="section_of_line1"></div>
+
+<!--- start arrows click --->
+
+<div class="arrows_on_section"> 
+<div class="arrow_of_left">
+  <i class="fa-solid fa-chevron-left" id="arrowleft8"></i>
+</div>
+
+<div class="arrow_of_right">
+  <i class="fa-solid fa-chevron-right" id="arrowright8"></i>
+</div>
+
+</div>
+
+<br>
+
+<!--- end arrows click --->
+
+<div class="movies_list8">
+  
+    <div class="list_of_movies">
+      <img onclick="window.location.href='listOFmovies.html?film=oppenhaimer1'" id="edit_pic" src="https://i.pinimg.com/736x/de/24/fe/de24fe5c4db78be0bef8200617dca280.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+    
+    
+  
+    <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=blacklight2'" id="edit_pic" src="https://resizing.flixster.com/7SihmPqQ55VYnw-OsQa0aEjnVbo=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p20876329_v_v10_aq.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  
+    <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=extraction3'" id="edit_pic" src="https://image.tmdb.org/t/p/w342/1RbcS5hlI5jOnKZmh6DwQbg7ncT.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <div class="list_of_movies">
+    <img onclick="window.location.href='listOFseries1.html?film=noOne4'" id="edit_pic" src="https://posterspy.com/wp-content/uploads/2023/09/No-One-Will-Save-You-Poster-1-480x720.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+  
+    <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=creator5'" id="edit_pic" src="https://bestsimilar.com/img/movie/thumb/01/88376.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <!--- start watch and list --->
+  
+  <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=hijack6'" id="edit_pic" src="https://resizing.flixster.com/yRBwQRDVFUIVOjd7Pj8579oavFc=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28523655_v_v8_aa.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <!--- start watch and list --->
+  
+  
+  <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=terr7'" id="edit_pic" src="https://pics.filmaffinity.com/Terrifier_3-729725605-large.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <!--- start watch and list --->
+  
+
+  <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=souleater8'" id="edit_pic" src="https://resizing.flixster.com/CGpKAsjGBB4NCRcoLmKpZEuR1Oc=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p26024663_v_v9_ab.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <!--- start watch and list --->
+  
+
+  <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=operation9'" id="edit_pic" src="https://m.media-amazon.com/images/M/MV5BZTc1MzQxNmYtZjdjMS00Mzk1LTk5NjctNmM3OWQyMGYyYjhlXkEyXkFqcGc@._V1_.jpg" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <!--- start watch and list --->
+  
+
+  <!--- end watch and list --->
+  
+    <!--- end watch and list --->
+  
+  <div class="list_of_movies">
+      <img onclick="window.location.href='listOFseries1.html?film=carved10'" id="edit_pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjhcP3PVRHuJMxhe_rdHTl71riRC3mcXwbOw&s" style="width: 300px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+  <!--- start watch and list --->
+  
+
+  <!--- end watch and list --->
+  
+    <!--- end watch and list --->
+  
+</div>
+</div>
+
+<!--- start discover of section --->
+
+
+
+
+<div class="section_of_title_descover">
+  <p class="section_of_p">Discovery</p>
+<div class="section_of_discover"></div></div>
+
+<div class="video_of_movie">
+<iframe 
+    width="900" 
+    height="500" 
+    style="border-radius: 40px;"
+    src="https://www.youtube.com/embed/CHKn-yDCE2w?autoplay=1&mute=1&loop=1&playlist=CHKn-yDCE2w" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+</iframe>
+</div>
+
+<!--- end discover of section --->
+
+<div class="title_of_alldiscover">
+  <p class="p_of_discover">The beekeeper</p>
+  <p class="p_of_title_discover">One man's brutal campaign for vengeance takes on national stakes after it's revealed he's a former operative of a powerful and clandestine organization known as Beekeepers.</p>
+  <p class="p_of_title_discover1">Action • Crime • Thriller</p>
+</div>
+
+<br>
+
+  <!--- start watch and list --->
+  
+  <div class="watch_list2">
+    <button id="watch_section2" onclick="window.location.href='listOFseries1.html?film=9'">watch</button>
+    <button id="my_list_section2"> + my list</button>
+  </div>
+  
+  <!--- end watch and list --->
+  <br>
+  <!--- start discover of section --->
+
+<div class="video_of_movie">
+<iframe 
+    width="900" 
+    height="500" 
+    style="border-radius: 40px;"
+    src="https://www.youtube.com/embed/HyIyd9joTTc?autoplay=1&mute=1&loop=1&playlist=HyIyd9joTTc" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+</iframe>
+</div>
+
+<!--- end discover of section --->
+
+<div class="title_of_alldiscover">
+  <p class="p_of_discover">Venom 3</p>
+  <p class="p_of_title_discover">Eddie Brock and Venom must make a devastating decision as they're pursued by a mysterious military man.</p>
+  <p class="p_of_title_discover1">Action • Adventure • Sc-Fi • Thriller</p>
+</div>
+
+<br>
+
+  <!--- start watch and list --->
+  
+  <div class="watch_list2">
+    <button id="watch_section2" onclick="window.location.href='listOFseries1.html?film=22'">watch</button>
+    <button id="my_list_section2"> + my list</button>
+  </div>
+  
+  <!--- end watch and list --->
+  
+    <br>
+  <!--- start discover of section --->
+
+<div class="video_of_movie">
+<iframe 
+    width="900" 
+    height="500" 
+    style="border-radius: 40px;"
+    src="https://www.youtube.com/embed/h9Q4zZS2v1k?autoplay=1&mute=1&loop=1&playlist=h9Q4zZS2v1k" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+</iframe>
+</div>
+
+<!--- end discover of section --->
+
+<div class="title_of_alldiscover">
+  <p class="p_of_discover">The conjuring 3</p>
+  <p class="p_of_title_discover">Paranormal investigators Ed and Lorraine Warren take on one of the most sensational cases of their careers after a cop stumbles upon a dazed and bloodied young man walking down the road. Accused of murder, the suspect claims demonic possession as his defense, forcing the Warrens into a supernatural inquiry unlike anything they've ever seen before.</p>
+  <p class="p_of_title_discover1">Horror • Mystery • Thriller</p>
+</div>
+
+<br>
+
+  <!--- start watch and list --->
+  
+  <div class="watch_list2">
+    <button id="watch_section2" onclick="window.location.href='listOFseries1.html?film=23'">watch</button>
+    <button id="my_list_section2"> + my list</button>
+  </div>
+  
+  <!--- end watch and list --->
+  
+    <br>
+  <!--- start discover of section --->
+
+<div class="video_of_movie">
+<iframe 
+    width="900" 
+    height="500" 
+    style="border-radius: 40px;"
+    src="https://www.youtube.com/embed/jG1X67vnYM0?autoplay=1&mute=1&loop=1&playlist=jG1X67vnYM0" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+</iframe>
+</div>
+
+<!--- end discover of section --->
+
+<div class="title_of_alldiscover">
+  <p class="p_of_discover">Honest thief</p>
+  <p class="p_of_title_discover">Wanting to lead an honest life, a notorious bank robber turns himself in, only to be double-crossed by two ruthless FBI agents.</p>
+  <p class="p_of_title_discover1">Action • Thriller</p>
+</div>
+
+<br>
+
+  <!--- start watch and list --->
+  
+  <div class="watch_list2">
+    <button id="watch_section2" onclick="window.location.href='listOFseries1.html?film=24'">watch</button>
+    <button id="my_list_section2"> + my list</button>
+  </div>
+  
+  <!--- end watch and list --->
+  
+    <br>
+  <!--- start discover of section --->
+
+<div class="video_of_movie">
+<iframe 
+    width="900" 
+    height="500" 
+    style="border-radius: 40px;"
+    src="https://www.youtube.com/embed/8lCyxWdAjzI?autoplay=1&mute=1&loop=1&playlist=8lCyxWdAjzI" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+</iframe>
+</div>
+
+<!--- end discover of section --->
+
+<div class="title_of_alldiscover">
+  <p class="p_of_discover">Spy master</p>
+  <p class="p_of_title_discover">Spy/Master is a Romanian fictional Cold War spy thriller television series created by Adina Sadeanu and Kirsten Peters and starring Alec Secareanu.Set in 1978 and filmed in Hungary and Romania, the series is loosely based on the real-life defection of Romanian spymaster Ion Mihai Pacepa.The series was produced by Mobra Films (Romania) and Proton Cinema (Hungary) for HBO Romania and Warner TV Serie and premiered on HBO Max in May 2023.
+
+</p>
+  <p class="p_of_title_discover1">Action • Drama • Thriller</p>
+</div>
+
+<br>
+
+  <!--- start watch and list --->
+  
+  <div class="watch_list2">
+    <button id="watch_section2" onclick="window.location.href='listOFseries1.html?film=e1'">watch</button>
+    <button id="my_list_section2"> + my list</button>
+  </div>
+
+
+
+    <br>
+  <!--- start discover of section --->
+
+<div class="video_of_movie">
+<iframe 
+    width="900" 
+    height="500" 
+    style="border-radius: 40px;"
+    src="https://www.youtube.com/embed/OAZWXUkrjPc?autoplay=1&mute=1&loop=1&playlist=OAZWXUkrjPc" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+</iframe>
+</div>
+
+<!--- end discover of section --->
+
+<div class="title_of_alldiscover">
+  <p class="p_of_discover">Napoleon 2023</p>
+  <p class="p_of_title_discover">An epic that details the chequered rise and fall of French Emperor Napoleon Bonaparte and his relentless journey to power through the prism of his addictive, volatile relationship with his wife, Josephine.
+
+</p>
+  <p class="p_of_title_discover1">Action • Adventure • Epic war • History</p>
+</div>
+
+<br>
+
+  <!--- start watch and list --->
+  
+  <div class="watch_list2">
+    <button id="watch_section2" onclick="window.location.href='listOFseries1.html?film=napoleon1'">watch</button>
+    <button id="my_list_section2"> + my list</button>
+  </div>
+
+
+<!---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--->
+
+<div class="section_of_title">
+  <p class="section_of_p">Popular series</p>
+</>
+<div class="section_of_line"></div>
+
+<!--- start arrows click --->
+
+<div class="arrows_on_section"> 
+<div class="arrow_of_left">
+  <i class="fa-solid fa-chevron-left" id="arrowleft4"></i>
+</div>
+
+<div class="arrow_of_right">
+  <i class="fa-solid fa-chevron-right" id="arrowright4"></i>
+</div>
+
+</div>
+
+<!--- end arrows click --->
+
+<div class="movies_list4">
+  
+  <div class="list_of_movies">
+    <img id="edit_pic" src="https://m.media-amazon.com/images/S/pv-target-images/562a6eb2f9a2bf380a78a38c270af6125e30ab9a8202812f538bffab426cd1a3.jpg" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+  <div class="watch_list31">
+    <button id="watch_section" onclick="window.location.href='listOFmovies.html?film=25'">watch</button>
+    <button id="my_list_section"> + my list</button>
+  </div>
+  
+    <!--- end watch and list --->
+
+    
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://images.ctfassets.net/wn7ipiv9ue5v/2BcdnDFK160wDy6YRCkEOS/ebfbb568e788b209baa0de17b8dde192/Game_of_Thrones_Legends_OG_Image__2_.jpg?w=&h=630&fm=&q=" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list32">
+      <button id="watch_section" onclick="window.location.href='listOFmovies.html?film=f1'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://pic1.iqiyipic.com/image/20240918/ef/2b/a_100545233_m_601_en_720_405.jpg" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list33">
+      <button id="watch_section" onclick="window.location.href='listOFmovies.html?film=m1'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://whipmedia.com/wp-content/uploads/2024/02/shogun.jpg" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list34">
+      <button id="watch_section" onclick="window.location.href='listOFmovies.html?film=q1'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://img.hulu.com/user/v3/artwork/cf45235c-5faa-4859-81b1-ab0feed79d1d?base_image_bucket_name=image_manager&base_image=5c7a89a2-264f-4ed3-a2da-530aacbfa920&size=1200x630&format=webp" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list35">
+      <button id="watch_section" onclick="window.location.href='listOFmovies.html?film=w1'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://foreigncrimedrama.com/wp-content/uploads/2023/05/spy-master-hbo-max-610x343.jpg" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list36">
+      <button id="watch_section" onclick="window.location.href='listOFmovies.html?film=e1'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+  
+
+
+</div>
+
+<!---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--->
+
+<div class="sec_all">
+
+<div class="section_of_title">
+  <p class="section_of_p">Action movies</p>
+</>
+<div class="section_of_line"></div>
+
+<!--- start arrows click --->
+
+<div class="arrows_on_section"> 
+<div class="arrow_of_left">
+  <i class="fa-solid fa-chevron-left" id="arrowleft5"></i>
+</div>
+
+<div class="arrow_of_right">
+  <i class="fa-solid fa-chevron-right" id="arrowright5"></i>
+</div>
+
+</div>
+
+<!--- end arrows click --->
+
+<div class="movies_list5">
+  
+  <div class="list_of_movies">
+    <img id="edit_pic" src="https://ntvb.tmsimg.com/assets/p17843098_v_h8_as.jpg?w=1280&h=720" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+  <div class="watch_list31">
+    <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=action1'">watch</button>
+    <button id="my_list_section"> + my list</button>
+  </div>
+  
+    <!--- end watch and list --->
+
+    
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://ntvb.tmsimg.com/assets/p28900_v_h10_aa.jpg?w=1280&h=720" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list32">
+      <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=action2'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://www.record.com.mx/sites/default/files/styles/v2-crop768x433/public/articulos/2024/09/18/deadpool_1.jpg?itok=ebcGnLNY" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list33">
+      <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=action3'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://material.asset.catchplay.com/C21-ID-001-A1057/artworks/posters/C21-ID-001-A1057-P448.jpg?hash=1729280471" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list34">
+      <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=action4'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://musclecar.uk/wp-content/uploads/2021/01/baby-driver-1.png" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list35">
+      <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=action5'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://cine-techno.com/wp/wp-content/uploads/2021/08/Inglourious-Basterds-banner-750.jpg" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list36">
+      <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=action6'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+
+</div>
+
+</div>
+
+<!---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--->
+
+<div class="sec_drama">
+
+<div class="section_of_title">
+  <p class="section_of_p">Drama movies</p>
+</>
+<div class="section_of_line"></div>
+
+<!--- start arrows click --->
+
+<div class="arrows_on_section"> 
+<div class="arrow_of_left">
+  <i class="fa-solid fa-chevron-left" id="arrowleft6"></i>
+</div>
+
+<div class="arrow_of_right">
+  <i class="fa-solid fa-chevron-right" id="arrowright6"></i>
+</div>
+
+</div>
+
+<!--- end arrows click --->
+
+<div class="movies_list6">
+  
+  <div class="list_of_movies">
+    <img id="edit_pic" src="https://www.koimoi.com/wp-content/new-galleries/2023/07/prime-video-greenlights-your-fault-and-our-fault-sequels-to-spanish-original-smash-hit-my-fault-01.jpg" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+  <div class="watch_list31">
+    <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=drama1'">watch</button>
+    <button id="my_list_section"> + my list</button>
+  </div>
+  
+    <!--- end watch and list --->
+
+    
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://ntvb.tmsimg.com/assets/p6326_v_h8_be.jpg?w=1280&h=720" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list32">
+      <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=drama2'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://res.cloudinary.com/jerrick/image/upload/v1686323638/648341b656d667001d7a4506.jpg" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list33">
+      <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=drama3'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://www.deeperblue.com/wp-content/uploads/2023/04/netflix-no-limit.jpg" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list34">
+      <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=drama4'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://i.ytimg.com/vi/NdEJwxYc6DQ/maxresdefault.jpg" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list35">
+      <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=drama5'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABYFqmxkYje-gte1Vox2Q0PoOCBCoZOqCm3BbgShW6D5zspc4WlLhy7pjZIK9J6vfojHrNwM7sE5repXqh_WLjzLflKUmMKJn3uL9.jpg?r=34b" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list36">
+      <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=drama6'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+
+</div>
+</div>
+
+
+<!---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--->
+
+<div class="sec_drama">
+
+<div class="section_of_title">
+  <p class="section_of_p">History movies<div class="arrow_of_icon"></div></p>
+</>
+<div class="section_of_line"></div>
+
+<!--- start arrows click --->
+
+<div class="arrows_on_section"> 
+<div class="arrow_of_left">
+  <i class="fa-solid fa-chevron-left" id="arrowleft7"></i>
+</div>
+
+<div class="arrow_of_right">
+  <i class="fa-solid fa-chevron-right" id="arrowright7"></i>
+</div>
+
+</div>
+
+<!--- end arrows click --->
+
+<div class="movies_list7">
+  
+  <div class="list_of_movies">
+    <img id="edit_pic" src="https://www.filmmakersacademy.com/wp-content/uploads/2020/01/910E40A2-E90B-402B-ADF5-F200EF52D4DF-1280x720.jpg" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+  </div>
+  
+  <!--- start watch and list --->
+  
+  <div class="watch_list31">
+    <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=old1'">watch</button>
+    <button id="my_list_section"> + my list</button>
+  </div>
+  
+    <!--- end watch and list --->
+
+    
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://i.ytimg.com/vi/N2KJMfrJv1c/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCbQQO3Qu3gnnOtgIf1djAu-qgssw" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list32">
+      <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=old2'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://i.ytimg.com/vi/SVGXG8sEdQU/maxresdefault.jpg" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list33">
+      <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=old3'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://mediaproxy.salon.com/width/1200/https://media2.salon.com/2014/10/fury.jpg" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list34">
+      <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=old4'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://i.ytimg.com/vi/1ZS1Il6q7gs/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGHIgRygyMA8=&rs=AOn4CLCc9FE5Wa6CPZPDE4GORDTr9CQUxg" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list35">
+      <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=old5'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+    <div class="list_of_movies">
+      <img id="edit_pic" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/king-arthur-legend-of-the-sword-social.jpg" style="width: 900px; height:450px; object-flit: cover; background-size: cover; border-radius: 20px;">
+    </div>
+  
+    <!--- start watch and list --->
+  
+    <div class="watch_list36">
+      <button id="watch_section" onclick="window.location.href='listOFseries1.html?film=old6'">watch</button>
+      <button id="my_list_section"> + my list</button>
+    </div>
+  
+    <!--- end watch and list --->
+
+</div>
+</div>
+
+<br>
+<br>
+<br>
+
+
+<!--- start help --->
+
+<div class="help_section">
+  <ul class="help_ul">
+    <li class="help_li">About us</li>
+    <li class="help_li">Help center</li>
+    <br>
+    <li class="help_li">Terms of us</li>
+    <li class="help_li">Privacy police</li>
+    <br class="help_li">
+    <li class="help_li">Contact us</li>
+    <li class="help_li"><a href="aazeddine000@gmail.com">aazeddine000@gmail.com</a></li>
+    <li class="help_li"><a href="contact.html">Contact support </a></li>
+
+  
+    <br>
+    <li class="help_li">Follow us</li>
+    <li> <i class="fa-brands fa-instagram"> </i> <i class="fa-brands fa-facebook"> </i> <i class="fa-brands fa-x"> </i></li>
+    <br>
+    <li class="help_li">Download our app on </li>
+    <br>
+    <div class="help_img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png"style="width: 400px; height: 110px;">
+      
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png
+" style="width: 400px; height: 110px;">
+  </div>
+    <li class="help_lii">©2024 SPYshow</li>
+  </ul>
+</div>
+
+<!--- end help --->
+<!-- شاشة التحميل -->
+
+
+
+
+
+<script src="onflix.js" type="module"></script>
+
+</body>
+</html
