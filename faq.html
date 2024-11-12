@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <script src="https://accounts.google.com/gsi/client" async defer></script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+         <meta charset="UTF-8" />
+    
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    
+         <meta name="description" content="" />
+    
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+         <link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap" rel="stylesheet">
+    
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+    
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>FAQ | SPYshow</title>
+    <style>
+        /* General body and background settings */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #020b1a;
+            color: #a16a16;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* Container for the FAQ section */
+        .faq-container {
+            background: #020b1a;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.7);
+            max-width: 1000px;
+            opacity: 1;
+            margin-top: 150px;
+        }
+
+        /* FAQ Title Styling */
+        h1 {
+            font-size: 40px;
+            color: #f3f3f3;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            animation: fadeInTitle 1s forwards;
+        }
+
+        /* Section Titles */
+        h2 {
+            font-size: 30px;
+            font-weight: 600;
+            color: #f3f3f3;
+            margin: 30px 0 15px;
+            text-transform: capitalize;
+            border-bottom: 2px solid #a16a16;
+            padding-bottom: 8px;
+            display: inline-block;
+            opacity: 0;
+            animation: fadeInText 1.5s forwards;
+        }
+
+        a {
+            color: #eee;
+        }
+
+        /* Paragraphs styling */
+        p {
+            font-size: 16px;
+            color: #cccccc;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 20px auto;
+            opacity: 0;
+            animation: fadeInText 2s forwards;
+        }
+
+        /* Animations */
+        @keyframes fadeInTitle {
+            from { opacity: 0; transform: translateY(-300px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(-300px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            background: #020b1a;
+            color: #fff;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            height: 100px;
+            top: 0;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .header-title {
+            font-size: 40px;
+            text-align: center;
+            letter-spacing: 2px;
+            font-family: "Playwrite GB S", cursive;
+            font-optical-sizing: auto;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 55px;
+            margin-top: 5px;
+        }
+
+        .leftt {
+            margin-left: 25rem;
+            font-size: 40px;
+            margin-top: -80px;
+            position: absolute;
+        }
+
+        .faq-item {
+            background-color: #1d2530;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        .faq-item h3 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .faq-item p {
+            font-size: 16px;
+            color: #cccccc;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="header-title" style="color: #a16a16;">FAQ | SPYshow</h1>
+        <a href="onflix.html"><i class="fa-solid fa-chevron-left leftt"></i></a>
+    </header>
+
+    <div class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="faq-item">
+            <h3>What is SPYshow?</h3>
+            <p>SPYshow is an online platform that offers a collection of thrilling, exciting films for movie lovers. We aim to provide a wide range of films, from classics to the latest releases.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How can I watch movies on SPYshow?</h3>
+            <p>Simply sign up, browse our library, and start watching your favorite movies directly on the platform. No need for additional software or hardware!</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Is SPYshow free to use?</h3>
+            <p>We offer both free and premium plans. The free plan gives you access to a limited selection of movies, while the premium plan unlocks the full library with additional features.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>How to Use the Search Feature on SPYshow?</h3>
+            <p>1. Search by Movie Name:
+            <br>
+            To quickly find a specific movie, simply type the title in the search bar. For example, if you're looking for Terrifier 3, just type "Terr" and the system will display matching movies, including Terrifier 3.
+            
+            <br>
+            <br>
+            
+            2. Filter by Genre:
+            <br>
+            Use the filter options to narrow down your movie selection. You can choose from a variety of genres, such as Horror, Action, Comedy, and more. This helps you quickly discover films in your preferred category.
+            
+            <br>
+            <br>
+            
+            3. Partial Title Search:
+            <br>
+            If you're unsure of the full title, you can type the first few letters. For example, typing "Harr" will show all movies starting with "Harr" (such as Harry Potter). This is especially useful for finding movies with long or complicated names.
+            
+            <br>
+            <br>
+            
+            4. Advanced Search (Optional):
+            <br>
+            For more specific results, you can combine filters like genre, release year, and even language. This ensures you find exactly what you're looking for with minimal effort.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Real feature</h3>
+            <p>Real-Time Chat:
+
+SPYshow offers a live chat feature that allows users to communicate directly with customer support or engage in discussions with other users about movies. Whether you have questions or want to share thoughts on the latest films, you can chat instantly.
+<br>
+<br>
+
+Movie Discussions:
+<br>
+
+You can also join discussions about your favorite movies. Share your thoughts, reviews, or ask for recommendations. The chat feature makes it easy to engage with the community and discover new films to watch.
+
+<br>
+<br>
+
+By using these tools, you can navigate SPYshow with ease, finding the right movie or discussing your favorite titles effortlessly.
+</p>
+        </div>
+        
+        
+        <div class="faq-item">
+            <h3>How can I contact SPYshow?</h3>
+            <p>If you have any questions, feel free to reach out to us via email at <a href="mailto:s.spyshow@gmail.com">contact@spyshow.com</a>.</p>
+        </div>
+    </div>
+</body>
+</html>

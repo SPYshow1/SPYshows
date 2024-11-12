@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #020b1a, #1b1f24);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            margin: 0 0 20px;
+            color: #ff6f61;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #00c6ff;
+        }
+    </style>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyByJzPN4z9F6Srxdo6HE8QSc16pZVPaxKg",
+            authDomain: "spyshow-6.firebaseapp.com",
+            projectId: "spyshow-6",
+            storageBucket: "spyshow-6.appspot.com",
+            messagingSenderId: "118262590800",
+            appId: "1:118262590800:web:0b67d31a1d4b9be1b09055",
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                document.getElementById('userEmail').innerText = "Email: " + user.email;
+
+                // Fetch user data from Firestore
+                const docRef = doc(db, "users", user.uid);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    const userData = docSnap.data();
+                    document.getElementById('userName').innerText = "Name: " + userData.name;
+                    document.getElementById('userSurname').innerText = "Surname: " + userData.surname;
+                } else {
+                    document.getElementById('userName').innerText = "Name: Not specified";
+                    document.getElementById('userSurname').innerText = "Surname: Not specified";
+                }
+            } else {
+                alert("You must log in to access this page.");
+                window.location.href = "index.html"; // return to login page
+            }
+        });
+
+        window.logout = function() {
+            auth.signOut().then(() => {
+                alert("Logged out successfully!");
+                window.location.href = "index.html"; // return to login page
+            }).catch((error) => {
+                alert("An error occurred while logging out: " + error.message);
+            });
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>User Profile</h2>
+        <p id="userEmail"></p>
+        <p id="userName"></p>
+        <p id="userSurname"></p>
+        <button onclick="logout()">Logout</button>
+    </div>
+</body>
+</html>

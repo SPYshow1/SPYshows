@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <link rel="manifest" href="/path/to/manifest.json">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to SPYshow</title>
+    <style>
+        /* التصميم الأساسي */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #020b1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #a16a16;
+        }
+
+        /* نافذة الترحيب */
+        .popup {
+          font-size: 20px;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            background-color: #121212;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            color: #a16a16;
+            position: relative;
+            overflow: hidden;
+            transform: scale(1.5);
+        }
+
+        /* العنوان */
+        .popup h2 {
+            font-size: 28px;
+            color: #a16a16;
+            margin-bottom: 10px;
+        }
+
+        /* تصميم الأزرار */
+        .popup button {
+            padding: 12px 20px;
+            margin: 10px 5px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #a16a16;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+
+        /* تصميم الشريحة */
+        .slide {
+            display: none;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* زر Skip */
+        .skip-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #8c5b5b;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        /* العين المتحركة */
+        .eye {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 25px;
+            border: 2px solid #a16a16;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+            animation: blink 4s infinite;
+        }
+
+        .eye::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: #a16a16;
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+            animation: move-eye 3s infinite;
+        }
+
+        @keyframes blink {
+            0%, 20%, 40%, 60%, 80%, 100% { height: 25px; }
+            10%, 30%, 50%, 70%, 90% { height: 5px; }
+        }
+
+        @keyframes move-eye {
+            0%, 100% { left: 5px; }
+            50% { left: 25px; }
+        }
+
+        /* تأثيرات الانتقال */
+        .popup .slide:not(.active) {
+            opacity: 0;
+        }
+
+        /* ملاحظة البريد الإلكتروني */
+        .note {
+            font-size: 1.2em;
+            color: #a16a16; /* لون مميز للملاحظة */
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- النافذة الترحيبية بعشر شرائح -->
+    <div class="popup" id="popup">
+        <button class="skip-btn" onclick="skip()">Skip</button>
+        
+        <!-- الشعار: العين + النص -->
+        <div class="eye"></div>
+        <h2><span style="color: #eee;">SPY</span>show</h2>
+        
+        <!-- الشرائح -->
+        <div class="slide active" id="slide1">
+            <h2>Welcome to SPYshow!</h2>
+            <p>Your ultimate source for movies and series. Dive into thousands of options from all genres.</p>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+
+        <div class="slide" id="slide2">
+            <h2>Search Made Easy</h2>
+            <p>Can't remember the movie title? Just type a part of the name or year, and our advanced search engine will find it for you.</p>
+            <button onclick="prevSlide()">Previous</button>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+
+        <div class="slide" id="slide3">
+            <h2>Genre Filter</h2>
+            <p>Looking for horror or action? Use our genre filter to explore movies by type instantly.</p>
+            <button onclick="prevSlide()">Previous</button>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+
+        <div class="slide" id="slide4">
+            <h2>One-Click Search</h2>
+            <p>No need to type! Just click on the search icon for a list of popular movies if you leave the search bar blank.</p>
+            <button onclick="prevSlide()">Previous</button>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+
+        <div class="slide" id="slide5">
+            <h2>Create a New Account</h2>
+            <p>Sign up easily and safely to access personalized recommendations and secure features.</p>
+            <p class="note"> Please ensure to use your real email address when creating your account. You can create any password you like, but having a valid email is crucial. Do not create an email address from your imagination, as this will prevent us from assisting you in recovering your password. If you forget your password, you'll need to use the "Forgot Password" option. The support team will send you a recovery email, and you'll need to follow the link provided to create a new account.
+
+Thank you for your understanding!
+
+
+</p>
+            <button onclick="prevSlide()">Previous</button>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+
+        <div class="slide" id="slide6">
+            <h2>Share with Friends</h2>
+            <p>Share your favorite movies with friends directly from our platform with just a click.</p>
+            <button onclick="prevSlide()">Previous</button>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+
+        <div class="slide" id="slide7">
+            <h2>High-Quality Streaming</h2>
+            <p>Enjoy movies and series in HD quality with a fast, smooth streaming experience.</p>
+            <button onclick="prevSlide()">Previous</button>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+
+        <div class="slide" id="slide8">
+            <h2>Advanced Security</h2>
+            <p>Your privacy is our priority. All data and activities are fully secured and encrypted.</p>
+            <button onclick="prevSlide()">Previous</button>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+
+        <div class="slide" id="slide9">
+            <h2>Personalized Recommendations</h2>
+            <p>Our smart engine analyzes your preferences to suggest movies and shows just for you.</p>
+            <button onclick="prevSlide()">Previous</button>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+
+        <div class="slide" id="slide10">
+            <h2>Ready to Explore?</h2>
+            <p>Click 'Done' to enter SPYshow and start discovering amazing movies and series tailored for you.</p>
+            <button onclick="prevSlide()">Previous</button>
+            <button onclick="finish()">Done</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+
+        function nextSlide() {
+            if (currentSlide < 10) {
+                document.getElementById(`slide${currentSlide}`).classList.remove('active');
+                currentSlide++;
+                document.getElementById(`slide${currentSlide}`).classList.add('active');
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                document.getElementById(`slide${currentSlide}`).classList.remove('active');
+                currentSlide--;
+                document.getElementById(`slide${currentSlide}`).classList.add('active');
+            }
+        }
+
+        function finish() {
+            window.location.href = 'index1.html';
+        }
+
+        function skip() {
+            window.location.href = 'index1.html';
+        }
+    </script>
+</body>
+</html>

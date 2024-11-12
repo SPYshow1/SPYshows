@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta charset="UTF-8" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+    <meta name="description" content="" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>About Us | SPYshow</title>
+    <style>
+        /* General body and background settings */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #020b1a;
+            color: #a16a16;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* Container for the About Us section */
+        .about-us-container {
+            background: #020b1a;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.7);
+            max-width: 1000px;
+            opacity: 1;
+            margin-top: 150px;
+        }
+
+        /* About Us Title Styling */
+        h1 {
+            font-size: 40px;
+            color: #f3f3f3;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            animation: fadeInTitle 1s forwards;
+        }
+
+        /* Section Titles */
+        h2 {
+            font-size: 30px;
+            font-weight: 600;
+            color: #f3f3f3;
+            margin: 30px 0 15px;
+            text-transform: capitalize;
+            border-bottom: 2px solid #a16a16;
+            padding-bottom: 8px;
+            display: inline-block;
+            opacity: 0;
+            animation: fadeInText 1.5s forwards;
+        }
+
+        a {
+            color: #eee;
+        }
+
+        /* Paragraphs styling */
+        p {
+            font-size: 16px;
+            color: #cccccc;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 20px auto;
+            opacity: 0;
+            animation: fadeInText 2s forwards;
+        }
+
+        /* Animations */
+        @keyframes fadeInTitle {
+            from { opacity: 0; transform: translateY(-300px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(-300px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            background: #020b1a;
+            color: #fff;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            height: 100px;
+            top: 0;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .header-title {
+            font-size: 40px;
+            text-align: center;
+            letter-spacing: 2px;
+            font-family: "Playwrite GB S", cursive;
+            font-optical-sizing: auto;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 55px;
+            margin-top: 5px;
+        }
+
+        .leftt {
+            margin-left: 25rem;
+            font-size: 40px;
+            margin-top: -80px;
+            position: absolute;
+        }
+
+        .about-item {
+            background-color: #1d2530;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        .about-item h3 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .about-item p {
+            font-size: 16px;
+            color: #cccccc;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="header-title" style="color: #a16a16;">About Us</h1>
+        <a href="onflix.html"><i class="fa-solid fa-chevron-left leftt"></i></a>
+    </header>
+
+    <div class="about-us-container">
+        <h1>About Us</h1>
+
+        <div class="about-item">
+            <h3>Our Mission</h3>
+            <p>At SPYshow, we are dedicated to providing the best entertainment experience. Our platform offers a diverse range of content that is sure to keep you engaged and entertained. We are always striving to bring more value to our users by improving our services.</p>
+        </div>
+
+        <div class="about-item">
+            <h3>Our Vision</h3>
+            <p>Our vision is to be the go-to platform for entertainment, offering content that resonates with our global audience. We aim to create a space where people can come together, enjoy high-quality content, and discover new things every day.</p>
+        </div>
+
+        <div class="about-item">
+            <h3>Our Story</h3>
+            <p>SPYshow started with a simple idea: to offer a unique streaming experience for people of all interests. Over time, we have evolved into a leading platform, attracting a loyal user base and growing our library of content. Today, we are more passionate than ever about delivering entertainment that inspires.</p>
+        </div>
+
+        <div class="about-item">
+            <h3>Our Team</h3>
+            <p>We have a dedicated team of professionals working tirelessly behind the scenes to ensure that SPYshow remains the top destination for entertainment. From content creators to technical experts, our team is committed to providing you with the best possible experience.</p>
+        </div>
+
+        <div class="about-item">
+            <h3>Contact Us</h3>
+            <p>If you have any questions or feedback, please feel free to reach out to us at <a href="mailto:s.spyshow@gmail.com">contact@spyshow.com</a>. We'd love to hear from you!</p>
+        </div>
+    </div>
+</body>
+</html>

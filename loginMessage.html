@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <meta charset="UTF-8" />
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    
+        <meta name="description" content="" />
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap" rel="stylesheet">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <title>login admin</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #020b1a;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+            font-size: 35px;
+        }
+
+        input[type="text"], input[type="password"] {
+            transform: scale(1.8);
+            padding: 15px;
+            margin: 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 250px;
+            background: #333;
+            color: #eee;
+            outline: none;
+            font-size: 16px;
+            border-radius: 50px;
+        }
+
+        button {
+            padding: 20px 20px;
+            border: none;
+            background: #a16a16;
+            color: white;
+            cursor: pointer;
+            width: 30rem;
+            margin-top: 10px;
+            font-size: 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .toggle-link {
+            color: #a16a16;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 25px;
+        }
+        .leftt {
+            margin-left: 33rem;
+            font-size: 40px;
+            margin-top: -90px;
+            position: absolute;
+        }
+        a {
+            color: #eee;
+        }
+        .h1 {
+          margin-top: 20px;
+          text-align: center;
+          color: #a16a16;
+          font-family: "Playwrite GB S", cursive;
+          height: 70px;
+        }
+.tv{
+  margin-top: -55rem;
+}
+    </style>
+</head>
+<body>
+  <div class="tv">
+    <h1  class="h1">Movies chat</h1>
+    <a href="onflix.html"><i class="fa-solid fa-chevron-left leftt"></i></a>
+  </div>
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <br>
+  <br>
+  <br>
+
+    <h1 id="formTitle">Login to Movie Chat</h1>
+    <input type="text" id="usernameInput" placeholder="Username (must contain @)">
+    <input type="password" id="passwordInput" placeholder="Password">
+    <button id="actionButton">Login</button>
+    <div class="toggle-link" id="toggleLink">Don't have an account? Register here.</div>
+
+    <!-- Firebase SDK v9+ -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+        import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyByJzPN4z9F6Srxdo6HE8QSc16pZVPaxKg",
+            authDomain: "spyshow-6.firebaseapp.com",
+            projectId: "spyshow-6",
+            storageBucket: "spyshow-6.appspot.com",
+            messagingSenderId: "118262590800",
+            appId: "1:118262590800:web:0b67d31a1d4b9be1b09055"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        let isRegistering = false;
+
+        const actionButton = document.getElementById("actionButton");
+        const toggleLink = document.getElementById("toggleLink");
+        const formTitle = document.getElementById("formTitle");
+
+        actionButton.addEventListener("click", async () => {
+            const username = document.getElementById("usernameInput").value;
+            const password = document.getElementById("passwordInput").value;
+
+            if (isRegistering) {
+                // Registration logic
+                if (username && password) {
+                    if (await usernameExists(username)) {
+                        alert("Username already exists. Please choose another one.");
+                    } else {
+                        await set(ref(db, "users/" + username), {
+                            username: username,
+                            password: password // Ideally, don’t save raw password, use hashed version
+                        });
+                        alert("Registration successful! You can now log in.");
+                        toggleForm(); // Switch back to login form
+                    }
+                } else {
+                    alert("Please enter a username and password.");
+                }
+            } else {
+                // Login logic
+                if (username && password) {
+                    const dbRef = ref(db);
+                    const snapshot = await get(child(dbRef, `users/${username}`));
+                    
+                    if (snapshot.exists()) {
+                        const userData = snapshot.val();
+                        if (userData.password === password) {
+                            localStorage.setItem("currentUser", username);
+                            window.location.href = "admin.html"; // Redirect to admin page
+                        } else {
+                            alert("Incorrect password. Please try again.");
+                        }
+                    } else {
+                        alert("Username does not exist. Please register.");
+                    }
+                } else {
+                    alert("Please enter username and password.");
+                }
+            }
+        });
+
+        toggleLink.addEventListener("click", toggleForm);
+
+        function toggleForm() {
+            isRegistering = !isRegistering;
+            if (isRegistering) {
+                formTitle.textContent = "Register to Movie Chat";
+                actionButton.textContent = "Register";
+                toggleLink.textContent = "Already have an account? Login here.";
+            } else {
+                formTitle.textContent = "Login to Movie Chat";
+                actionButton.textContent = "Login";
+                toggleLink.textContent = "Don't have an account? Register here.";
+            }
+        }
+
+        async function usernameExists(username) {
+            const dbRef = ref(db);
+            const snapshot = await get(child(dbRef, `users/${username}`));
+            return snapshot.exists();
+        }
+    </script>
+
+
+</body>
+</html>
